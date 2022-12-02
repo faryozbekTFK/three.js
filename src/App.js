@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import { Canvas } from "@react-three/fiber";
+import TeapotModel from "./threeFiber/teapot";
+import Model from "./threeFiber/model";
+import Combined from "./threeFiber/Combined";
+import "./App.css";
+import NewCombined from "./threeFiber/NewCombined";
+import Crud from "./CRUD/Crud";
 
 function App() {
+  const [hide, setHide] = useState(false);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="canvasContainer">
+      {/* <Crud /> */}
+      {/* <h1> {hide ? "Open" : "Close"} </h1> */}
+      {/* <ThreeFiber /> */}
+      {/* <Controls /> */}
+      <Canvas style={{ height: "100vh" }}>
+        {/* <Model /> */}
+        {/* <TeapotModel onHide={() => setHide(!hide)} /> */}
+        <Combined />
+        {/* <NewCombined /> */}
+      </Canvas>
     </div>
   );
 }
 
 export default App;
+
+// Kamerani obyektga yuborish
+// Obyektga action yozish
